@@ -156,10 +156,9 @@ body {
   border-radius: 5px;
 }
 
-figure {
+.column figure {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  margin: 20px 0; /* Optional: Add some margin for spacing */
+  flex-direction: column;
 }
