@@ -242,26 +242,26 @@
         <div class="column">
           <figure>
             <img src="./static/images/main.png" alt="Model Architecture">
-            <figcaption>The overall framework of <b>InstructG2I</b>.</figcaption>
+            <figcaption>The overall framework of <b>InstructG2I</b>.
+              (a) Given a target node with a text prompt (e.g., House in Snow) in a Multimodal Attributed Graph (MMAG) 
+              for which we want to generate an image, (b) we first perform semantic PPR-based neighbor sampling, 
+              which involves structure- aware personalized PageRank and semantic-aware similarity-based reranking 
+              to sample informative neighboring nodes in the graph. (c) These neighboring nodes are then inputted 
+              into a Graph-QFormer, encoded by multiple self-attention and cross-attention layers, represented as 
+              graph tokens and used to guide the denoising process of the diffusion model, together with text prompt tokens.
+            </figcaption>
           </figure>
         </div>
 
-        <div class="content has-text-justified"></div>
+        <!-- <div class="content has-text-justified"></div>
           <p>
-            (a) Given a target node with a text prompt (e.g., House in Snow) in a Multimodal Attributed Graph (MMAG) 
-            for which we want to generate an image, (b) we first perform semantic PPR-based neighbor sampling, 
-            which involves structure- aware personalized PageRank and semantic-aware similarity-based reranking 
-            to sample informative neighboring nodes in the graph. (c) These neighboring nodes are then inputted 
-            into a Graph-QFormer, encoded by multiple self-attention and cross-attention layers, represented as 
-            graph tokens and used to guide the denoising process of the diffusion model, together with text prompt tokens.
-          </p>
+            xxxx
+          </p> -->
       </div>
     </div>
-  <!-- </div> -->
   <!--/ Model Architecture. -->
 
     <!-- Concurrent Work. -->
-  <!-- <div class="container is-max-desktop"> -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
