@@ -272,11 +272,22 @@
 
         <div class="content has-text-justified"></div>
           <p>
-            We define the loss function as follows:
+            In our task, the score network \(\hat{\epsilon}_\theta(\mathbf{z}_t, c_G, c_T)\) is conditioned on 
+            both text \(c_T=d_i\) and the graph condition \(c_G\).
+            We compose the score estimates from these two conditions and introduce two guidance scales, \(s_T\) 
+            and \(s_G\), to control the contribution strength of \(c_T\) and \(c_G\) to the generated samples respectively.
+            Our modified score estimation function is:
             \[
-              \mathcal{L} = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+                \hat{\epsilon}_\theta(\mathbf{z}_t, c_G, c_T) = {\epsilon}_\theta(\mathbf{z}_t, \varnothing, \varnothing) + s_T \cdot ({\epsilon}_\theta(\mathbf{z}_t, \varnothing, c_T) - {\epsilon}_\theta(\mathbf{z}_t, \varnothing, \varnothing)) \notag \\
+                + s_G \cdot ({\epsilon}_\theta(\mathbf{z}_t, c_G, c_T) - {\epsilon}_\theta(\mathbf{z}_t, \varnothing, c_T)).\label{eq:cfg1}
             \]
-            where \(y_i\) represents the ground truth and \(\hat{y}_i\) represents the predicted output.
+            For cases requiring fine-grained control over multiple graph conditions (i.e., different edges), we extend the formula as follows:
+            \[
+                \hat{\epsilon}_\theta(\mathbf{z}_t, c_G, c_T) = {\epsilon}_\theta(\mathbf{z}_t, \varnothing, \varnothing) + s_T \cdot ({\epsilon}_\theta(\mathbf{z}_t, \varnothing, c_T) - {\epsilon}_\theta(\mathbf{z}_t, \varnothing, \varnothing)) \notag \\
+                + \sum s^{(k)}_G \cdot ({\epsilon}_\theta(\mathbf{z}_t, c^{(k)}_G, c_T) - {\epsilon}_\theta(\mathbf{z}_t, \varnothing, c_T)),\label{eq:cfg2}
+            \]
+            where \(c^{(k)}_G\) is the \(k\)-th graph condition.
+            For example, to create an artwork that combines the styles of Monet and Van Gogh, the neighboring artworks by Monet and Van Gogh on the graph would be \(c^{(1)}_G\) and \(c^{(2)}_G\), respectively.
           </p>
       </div>
     </div>
