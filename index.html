@@ -112,7 +112,7 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Illinois at Urbana-Champaign,</span>
+            <span class="author-block"><sup>1</sup>University of Illinois at Urbana-Champaign</span>
           </div>
 
           <div class="column has-text-centered">
@@ -183,21 +183,7 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section> -->
+
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -207,7 +193,7 @@
       </figure>
       <h2 class="subtitle has-text-centered">
         We propose a new task Graph2Image featuring image synthesis by conditioning on graph information and 
-        introduce a novel graph-conditioned diffusion model called <span class="dnerf">InstructG2I</span> to tackle this problem.
+        introduce a novel graph-conditioned diffusion model called <b>InstructG2I</b> to tackle this problem.
       </h2>
     </div>
   </div>
@@ -222,41 +208,14 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <!-- <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p> -->
           <p>
             In this paper, we approach an overlooked yet critical task <b>Graph2Image</b>: generating images 
             from multimodal attributed graphs (MMAGs).
             This task poses significant challenges due to the explosion in graph size, dependencies among graph entities, 
             and the need for controllability in graph conditions. 
             To address these challenges, we propose a graph context-conditioned diffusion model called 
-            <span class="dnerf">InstructG2I</span>.
-            <span class="dnerf">InstructG2I</span> first exploits the graph structure and multimodal information to conduct informative 
+            <b>InstructG2I</b>.
+            <b>InstructG2I</b> first exploits the graph structure and multimodal information to conduct informative 
             neighbor sampling by combining personalized page rank and re-ranking based on vision-language features. 
             Then, a Graph-QFormer encoder adaptively encodes the graph nodes into an auxiliary set of <b>graph prompts</b> 
             to guide the denoising process of diffusion. 
@@ -268,19 +227,6 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
   </div>
 </section>
 
@@ -290,57 +236,33 @@
 
     <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">Model Architecture</h2>
 
         <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
+        <!-- <h3 class="title is-4">Interpolating states</h3> -->
+        
+        <div class="column">
+          <figure>
+            <img src="./static/images/main.png" alt="Model Architecture">
+            <figcaption>The overall framework of <b>InstructG2I</b>.</figcaption>
+          </figure>
+        </div>
+
+        <div class="content has-text-justified"></div>
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            (a) Given a target node with a text prompt (e.g., House in Snow) in a Multimodal Attributed Graph (MMAG) 
+            for which we want to generate an image, (b) we first perform semantic PPR-based neighbor sampling, 
+            which involves structure- aware personalized PageRank and semantic-aware similarity-based reranking 
+            to sample informative neighboring nodes in the graph. (c) These neighboring nodes are then inputted 
+            into a Graph-QFormer, encoded by multiple self-attention and cross-attention layers, represented as 
+            graph tokens and used to guide the denoising process of the diffusion model, together with text prompt tokens.
           </p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
+
+        <!-- <div class="columns is-vcentered interpolation-panel">
           <div class="column is-3 has-text-centered">
             <img src="./static/images/interpolate_start.jpg"
                  class="interpolation-image"
@@ -361,7 +283,7 @@
                  alt="Interpolation end reference image."/>
             <p class="is-bold">End Frame</p>
           </div>
-        </div>
+        </div> -->
         <br/>
         <!--/ Interpolating. -->
 
