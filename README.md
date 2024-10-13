@@ -3,8 +3,13 @@
 This is the repository that contains source code for the [InstructG2I website](https://instructg2i.github.io/).
 
 If you find InstructG2I useful for your work please cite:
-```
-
+```bibtex
+@article{jin2024instructg2i,
+  title={InstructG2I: Synthesizing Images from Multimodal Attributed Graphs},
+  author={Jin, Bowen and Pang, Ziqi and Guo, Bingjun and Wang, Yu-Xiong and You, Jiaxuan and Han, Jiawei},
+  journal={arXiv preprint arXiv:2410.07157},
+  year={2024}
+}
 ```
 
 # Website License
